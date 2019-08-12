@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
 
   def index
+    #conditional to account if the user is trying to access all posts
+    #or all posts by a certain author.
     if params[:author_id]
       @posts = Author.find(params[:author_id]).posts
     else
